@@ -2,6 +2,10 @@ import {
     Box,
     Flex,
     Text,
+    Input,
+    InputGroup,
+    InputLeftAddon,
+    InputRightAddon,
     IconButton,
     Button,
     Stack,
@@ -14,6 +18,7 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    Image,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -21,9 +26,9 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  // import {logo} from "images/web logo";
+ // // import logo from "./src/web_logo.jpg";
   
-  export default function WithSubnavigation() {
+  export default function MidNav(){
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -52,18 +57,18 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
+            {/* <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-            </Text>
-            <img src=".src/images/web_logo.jpeg" alt='logo'/>
+            </Text> */}
+            <Image src="https://www.nearbuy.com/static/images/nearbuy_red_with_subtitle.svg" alt='logo' width="200px" height="100%" />
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
   
-          <Stack
+          {/* <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
@@ -88,7 +93,15 @@ import {
               }}>
               Sign Up
             </Button>
-          </Stack>
+          </Stack> */}
+          <Stack>
+          <InputGroup size='sm'>
+    <Input placeholder='Search for Resturants,Bars' />
+    <Button colorScheme='red'  size='sm'
+  height='38px'
+  width='120px'>SEARCH</Button>
+  </InputGroup>
+</Stack>
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
@@ -103,46 +116,46 @@ import {
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
-    return (
-      <Stack direction={'row'} spacing={4}>
-        {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
-                <Link
-                  p={2}
-                  href={navItem.href ?? '#'}
-                  fontSize={'sm'}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}>
-                  {navItem.label}
-                </Link>
-              </PopoverTrigger>
+    // return (
+    //   <Stack direction={'row'} spacing={4}>
+    //      {NAV_ITEMS.map((navItem) => (
+    //       <Box key={navItem.label}>
+    //         <Popover trigger={'hover'} placement={'bottom-start'}> 
+    //           <PopoverTrigger>
+    //             <Link
+    //               p={2}
+    //               href={navItem.href ?? '#'}
+    //               fontSize={'sm'}
+    //               fontWeight={500}
+    //               color={linkColor}
+    //               _hover={{
+    //                 textDecoration: 'none',
+    //                 color: linkHoverColor,
+    //               }}>
+    //               {navItem.label}
+    //             </Link>
+    //           </PopoverTrigger>
   
-              {navItem.children && (
-                <PopoverContent
-                  border={0}
-                  boxShadow={'xl'}
-                  bg={popoverContentBgColor}
-                  p={4}
-                  rounded={'xl'}
-                  minW={'sm'}>
-                  <Stack>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.label} {...child} />
-                    ))}
-                  </Stack>
-                </PopoverContent>
-              )}
-            </Popover>
-          </Box>
-        ))}
-      </Stack>
-    );
+    //           {navItem.children && (
+    //             <PopoverContent
+    //               border={0}
+    //               boxShadow={'xl'}
+    //               bg={popoverContentBgColor}
+    //               p={4}
+    //               rounded={'xl'}
+    //               minW={'sm'}>
+    //               <Stack>
+    //                 {navItem.children.map((child) => (
+    //                   <DesktopSubNav key={child.label} {...child} />
+    //                 ))}
+    //               </Stack>
+    //             </PopoverContent>
+    //           )}
+    //         </Popover>
+    //       </Box>
+    //     ))}
+    //   </Stack>
+    // );
   };
   
   const DesktopSubNav = ({ label, href, subLabel }) => {
@@ -185,9 +198,9 @@ import {
         bg={useColorModeValue('white', 'gray.800')}
         p={4}
         display={{ md: 'none' }}>
-        {NAV_ITEMS.map((navItem) => (
+        {/* {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
-        ))}
+        ))} */}
       </Stack>
     );
   };
@@ -249,43 +262,5 @@ import {
 //     href?: string;
 //   }
   
-  const NAV_ITEMS = [
-    {
-      label: 'Inspiration',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Find Work',
-      children: [
-        {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Freelance Projects',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Learn Design',
-      href: '#',
-    },
-    {
-      label: 'Hire Designers',
-      href: '#',
-    },
-  ];
+  
+  
