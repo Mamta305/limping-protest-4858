@@ -5,6 +5,8 @@ import Slideshow from "../Components/Slider";
 import Footer from "../Components/Footer";
 import Slides from "../Components/card";
 import ACard from "../Components/offers";
+// import Events from "../Components/Events";
+import { Link } from "react-router-dom";
 export default function Mainpage(){
     const pram=["https://img4.nbstatic.in/tr:w-2800/637dac5222b317000b774c8b.jpg","https://img4.nbstatic.in/tr:w-2800/636b8e7f22b317000b638322.jpg","https://img4.nbstatic.in/tr:w-2800/637b4c8a22156b000b18f311.jpg"];
     const colors = ["https://img4.nbstatic.in/tr:w-2800/63b3af1e22b317000c1336a8.jpg", "https://img4.nbstatic.in/tr:w-2800/63c4f59222b317000b619c56.jpg", "https://img4.nbstatic.in/tr:w-2800/63c90b038db992000bee9614.jpg"];
@@ -38,6 +40,49 @@ export default function Mainpage(){
       price: 'Rs.299',
       offers: "5", }
   ];
+  const bite = [{
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/63bea6188db992000b7a15f1.jpg',
+    imageAlt: 'img',
+    title: 'Swiggy',
+    price: 'GET 9%',
+    offers: "INSTANT DISCOUNT",
+  },
+  {
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/63c7a48822b317000b61a5f0.jpg',
+    imageAlt: 'img',
+    title: 'Dominos',
+    price: 'GET 17.5%',
+    offers: "INSTANT DISCOUNT",
+  },
+  {
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/636ced9622156b000b884ce7.jpg',
+    imageAlt: 'img',
+    title: 'KFC',
+    price: 'GET 8%',
+    offers: "INSTANT DISCOUNT",
+  },
+  {
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/636ced9e22b317000b638d9e.jpg',
+    imageAlt: 'img',
+    title: 'Pizza Hut',
+    price: 'GET 8%',
+    offers: "INSTANT DISCOUNT",
+  },
+  {
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/636cee8422156b000b884cef.jpg',
+    imageAlt: 'img',
+    title: 'Costa Cofee',
+    price: 'GET 9%',
+    offers: "INSTANT DISCOUNT",
+  },
+  {
+    imageUrl: 'https://img4.nbstatic.in/tr:w-350/636ced7e22b317000b638d9d.jpg',
+    imageAlt: 'img',
+    title: 'Cafe Cofee Day',
+    price: 'GET 10%',
+    offers:"INSTANT DISCOUNT",
+  },
+];
     return(
         <div>
         <TopSec />
@@ -49,6 +94,7 @@ export default function Mainpage(){
         <Slides hd="Everything On Buffet" pram={crd} />
         <Slideshow pram={colors1}/>
         <ACard hd="Popular Hangouts" proper={property} />
+        <ACard hd="Quick Bites" proper={bite} />
         <Footer/>
         </div>
     )
