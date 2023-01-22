@@ -1,10 +1,11 @@
 import Mainpage from './Pages/Home';
+import AllRoutes from './Components/AllRoutes';
 import './App.css';
 function App() {
   return (
-    <div className="App">
-      <Mainpage/>
-    </div>
+    <div className='App'>
+    <AllRoutes />
+  </div>
   );
 }
 export default App;

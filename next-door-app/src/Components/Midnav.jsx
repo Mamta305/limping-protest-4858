@@ -27,7 +27,7 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
  // // import logo from "./src/web_logo.jpg";
-  
+ import { Link as RouterLink, Router } from 'react-router-dom';
   export default function MidNav(){
     const { isOpen, onToggle } = useDisclosure();
   
@@ -62,7 +62,9 @@ import {
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
             </Text> */}
+            <RouterLink to="/">
             <Image src="https://www.nearbuy.com/static/images/nearbuy_red_with_subtitle.svg" alt='logo' width="200px" height="100%" />
+            </RouterLink>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>

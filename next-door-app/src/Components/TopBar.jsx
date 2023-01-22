@@ -1,4 +1,5 @@
 import {Box,Text,HStack} from "@chakra-ui/react";
+
 export default function TopBar(){
     return(
         <Box>
